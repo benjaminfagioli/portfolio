@@ -1,0 +1,32 @@
+---
+import Timeline from '../components/Timeline.astro'
+const formacion = [
+  {
+    date: 'Agosto 2023',
+    title:'Rolling Code',
+    description:'Curso de desarrollo web FullStack con stack MERN de 4 módulos y 3 proyectos.',
+    link:'https://certs.rollingcodeschool.com//YmVuamFfZmFnXzA0QGhvdG1haWwuY29t-1712776525644-1.png'
+  },{
+    date:'Marzo 2024',
+    title:'Universidad Nacional de Tucumán',
+    description:'Carrera de Programador Universitario'
+  }
+] 
+
+---
+
+<section id="formation" class="flex flex-col mt-5">
+  <h2 class="text-3xl mb-3">Formación</h2>
+  <ol class="relative border-s dark:border-[#532dbc]">
+      {formacion.map(f=> 
+        <li class="mb-8 ms-5">
+          <Timeline {...f}/>
+        </li>
+    )}
+  </ol>
+
+
+</section>
+<style>
+
+</style>

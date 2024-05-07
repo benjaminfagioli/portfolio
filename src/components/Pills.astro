@@ -1,0 +1,16 @@
+---
+const { href, body } = Astro.props;
+---
+
+<a href={href} target="_blank" class=`flex gap-1.5 items-center  py-1 px-3 rounded-full ${Astro.props.class ? Astro.props.class : ''  }`>
+  <slot/>
+</a>
+<style>
+  a{
+    border: 2px solid #442d85 ;
+    transition: all .2s ;
+    &:hover{
+      background-color: #391F81;
+    }
+  }
+</style>

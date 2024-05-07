@@ -1,0 +1,52 @@
+---
+import Badge from '../components/Badge.astro'
+import Github from '../icons/Github.astro';
+import LinkedIn from '../icons/LinkedIn.astro';
+import Pills from '../components/Pills.astro';
+import Outlook from '../icons/Outlook.astro';
+---
+<section id="about" class="flex flex-col">
+  <h1 class="flex items-center gap-2">
+    <span class="text-3xl md:text-5xl">
+      Hola, soy Benjamín. 👋
+    </span>
+    <Badge>
+      In progress...
+    </Badge>
+  </h1>
+  <h2 class="text-gray-400">Desarrollador web <span class=" bg-clip-text text-transparent">FullStack</span> y estudiante en la Universidad Nacional de Tucumán.</h2>
+  <section class="flex gap-3 flex-wrap mt-1.5">
+    <Pills href='https://github.com/benjaminfagioli'>
+      Github
+      <Github class:list={'size-5'}/>
+    </Pills>
+    <Pills href="https://www.linkedin.com/in/benjamín-fagioli">
+      Linkedin
+      <LinkedIn class:list={'size-5'}/>
+    </Pills>
+    <Pills href="mailto:benja_fag_04@hotmail.com">
+      Outlook
+      <Outlook class:list={'size-5'}>
+    </Pills>
+  </section>
+</section>
+<style>
+	h2 span{
+		background-image: linear-gradient(90deg,#532dbc9f,#6c48cf,#532dbc9f);
+		background-clip: text;
+		background-size: 300% 100%;
+		animation: gradient 6s ease-out infinite;
+	}
+	@keyframes gradient {
+		0% {
+			background-position: 300% 50%; 
+		}
+		50% {
+    background-position: 100% 100%;
+  }
+		100% {
+			background-position: 0% 50%;
+		}
+	}
+
+</style>

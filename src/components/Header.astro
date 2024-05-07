@@ -1,0 +1,44 @@
+---
+import Image from 'astro/components/Image.astro'
+import Photo from '../assets/Benja.png'
+---
+
+<header class="w-[1200px] max-w-[95%] mx-auto flex justify-between items-center p-4 fixed bg-transparent rounded-3xl rounded-tl-none top-0">
+  <figure class="bg-[#532dbc87] rounded-tl-xl rounded-full size-16 overflow-hidden">
+    <Image src={Photo} alt="Benja Fagioli" class=" ">
+  </figure>
+  <nav class="flex gap-1.5 md:gap-3 text-gray-200  me-2">
+    <!-- <a href="#">Inicio <span></span></a> -->
+    <a href="#about">Sobre mi <span></span></a>
+    <a href="#formation">Formación <span></span></a>
+    <a href="#projects">Proyectos <span></span></a>
+  </nav>
+</header>
+<style>
+  figure{
+    filter: drop-shadow(0 0 25px #532dbc)
+  }
+  nav a{
+    position: relative;
+    transition: all .3s;
+  }
+  nav a span{
+    position: absolute;
+    bottom:  0;
+    left: 0;
+    content: '';
+    width: 0%;
+    height: 2px;
+    border-radius: 20%;
+    overflow: hidden;
+    background: #532dbc;
+    filter: blur(1px);
+    transition: all .3s;
+  }
+  nav a:hover {
+    text-shadow: 10px -15px 1px #532dbc;
+    & > span{
+    width: 100%;
+  }
+  }
+</style>
