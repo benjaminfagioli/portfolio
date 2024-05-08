@@ -48,7 +48,7 @@ const PROJECTS = [
   {
     title: "Marvel Characters",
     description:
-      "An interactive page who tries to communicate a common user with the Marvel's Developer API (Characters, comics and series without a picture are excluded from the search",
+      "Una pagina interactiva que comunica a un usuario común con la API de desarrolladores de Marvel (Los personajes, comics y series sin una foto son excluidos de las búsquedas)",
     link: "https://marvels-characters.netlify.app/",
     github: "https://github.com/benjaminfagioli/Marvel-Characters",
     image: marvelImage,
@@ -85,6 +85,8 @@ const PROJECTS = [
 ---
 
 <section id="projects">
-  <h2 class="text-3xl">Proyectos <Code /></h2>
+  <h2 class="text-3xl">
+    <Code class="inline" /> Proyectos <Code class="inline" />
+  </h2>
   {PROJECTS.map((project) => <Project project={project} />)}
 </section>
