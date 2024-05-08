@@ -1,0 +1,30 @@
+---
+import Close from "../icons/Close.astro";
+---
+
+<nav
+  id="mobile-menu"
+  class="flex gap-1.5 transition-[transform] duration-500 text-gray-200 flex-col min-[0px]:text-xl sm:text-3xl font-extrabold fixed h-[100vh] w-[100vw] inset-0 justify-between py-6 items-end pe-6 bg-gradient-to-l via-black via-30% from-40% from-black
+  translate-x-[100%] z-50"
+>
+  <section>
+    <Close class="size-12 cursor-pointer" />
+  </section>
+  <section class="flex flex-col items-end gap-2">
+    <a href="#about">Sobre mi <span></span></a>
+    <a href="#formation">Formación <span></span></a>
+    <a href="#projects">Proyectos <span></span></a>
+  </section>
+  <span></span>
+</nav>
+
+<script>
+  const $mobileMenu = document.querySelector("#mobile-menu");
+  const closeMenu = () => {
+    $mobileMenu.classList.add("translate-x-[100%]");
+    $mobileMenu.classList.remove("translate-x-0");
+  };
+  $mobileMenu
+    .querySelectorAll("a, svg")
+    .forEach(($item) => $item.addEventListener("click", closeMenu));
+</script>

@@ -1,0 +1,10 @@
+---
+const { tag } = Astro.props;
+---
+
+<span
+  class=`flex rounded-3xl text-sm items-center w-fit p-0.5 px-3 gap-2 bg-clip-text text-transparent justify-center ${tag.class}`
+>
+  {tag.name}
+  <tag.icon class="size-3.5" />
+</span>

@@ -1,3 +1,90 @@
+---
+import CSS3 from "../icons/CSS3.astro";
+import Express from "../icons/Express.astro";
+import HTML5 from "../icons/HTML5.astro";
+import JavaScript from "../icons/JavaScript.astro";
+import MongoDB from "../icons/MongoDB.astro";
+import React from "../icons/React.astro";
+import Tailwind from "../icons/Tailwind.astro";
+const TAGS = {
+  CSS3: {
+    name: "CSS3",
+    class: " bg-[#30A9DC] ",
+    icon: CSS3,
+  },
+  HTML5: {
+    name: "HTML5",
+    class: " bg-[#af2701] ",
+    icon: HTML5,
+  },
+  JavaScript: {
+    name: "JavaScript",
+    class: " bg-[#e5c809] ",
+    icon: JavaScript,
+  },
+  React: {
+    name: "React",
+    class: " bg-[#03a3bf] ",
+    icon: React,
+  },
+  MongoDB: {
+    name: "MongoDB",
+    class: " bg-[#00bc4e] ",
+    icon: MongoDB,
+  },
+  Express: {
+    name: "Express Js",
+    class: " bg-[#777] ",
+    icon: Express,
+  },
+};
+
+import Project from "../components/Project.astro";
+import marvelImage from "../../public/projects/marvel-characters.webp";
+import hoteleraImage from "../../public/projects/hotelera.webp";
+import monkeyTypeImage from "../../public/projects/monkeytype.webp";
+import Code from "../icons/Code.astro";
+const PROJECTS = [
+  {
+    title: "Marvel Characters",
+    description:
+      "An interactive page who tries to communicate a common user with the Marvel's Developer API (Characters, comics and series without a picture are excluded from the search",
+    link: "https://marvels-characters.netlify.app/",
+    github: "https://github.com/benjaminfagioli/Marvel-Characters",
+    image: marvelImage,
+    tags: [TAGS.HTML5, TAGS.CSS3, TAGS.JavaScript, TAGS.React],
+  },
+  {
+    title: "Hotelera - Hotel Tour",
+    description:
+      "Pagina de mi proyecto final de RollingCode, utilizando React para el Front-End y MongoDB junto con Express para el Back-end",
+    link: "https://proyecto-final-83i.netlify.app/",
+    link2: "https://proyecto-final-back-mn0a.onrender.com",
+    github: "https://github.com/benjaminfagioli/proyecto-final-FRONT",
+    github2: "https://github.com/benjaminfagioli/proyecto-final-BACK",
+    image: hoteleraImage,
+    tags: [
+      // TAGS.HTML5,
+      // TAGS.CSS3,
+      TAGS.JavaScript,
+      TAGS.React,
+      TAGS.MongoDB,
+      TAGS.Express,
+    ],
+  },
+  {
+    title: "MonkeyType clone",
+    description:
+      "Una pagina para practicar mecanografía, utilizando vanilla JavaScript, que simula el comportamiento de la web MonkeyType",
+    link: "https://marvels-characters.netlify.app/",
+    github: "https://github.com/benjaminfagioli/Marvel-Characters",
+    image: monkeyTypeImage,
+    tags: [TAGS.HTML5, TAGS.CSS3, TAGS.JavaScript],
+  },
+];
+---
+
 <section id="projects">
-  
+  <h2 class="text-3xl">Proyectos <Code /></h2>
+  {PROJECTS.map((project) => <Project project={project} />)}
 </section>

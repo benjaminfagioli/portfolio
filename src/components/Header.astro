@@ -1,44 +1,77 @@
 ---
-import Image from 'astro/components/Image.astro'
-import Photo from '../assets/Benja.png'
+import Image from "astro/components/Image.astro";
+import Photo from "../assets/Benja.png";
+import Menu from "../icons/Menu.astro";
 ---
 
-<header class="w-[1200px] max-w-[95%] mx-auto flex justify-between items-center p-4 fixed bg-transparent rounded-3xl rounded-tl-none top-0">
-  <figure class="bg-[#532dbc87] rounded-tl-xl rounded-full size-16 overflow-hidden">
-    <Image src={Photo} alt="Benja Fagioli" class=" ">
+<header
+  class="w-[1200px] min-[0px]:max-w-[100%] md:max-w-[95%] mx-auto flex justify-between items-center p-4 fixed bg-transparent rounded-3xl rounded-tl-none top-0 z-40 bg-gradient-to-l"
+>
+  <figure
+    class="bg-[#532dbc87] rounded-tl-xl rounded-full size-16 overflow-hidden"
+  >
+    <Image src={Photo} alt="Benja Fagioli" />
   </figure>
-  <nav class="flex gap-1.5 md:gap-3 text-gray-200  me-2">
-    <!-- <a href="#">Inicio <span></span></a> -->
+  <button class="hamburguesa z-30">
+    <Menu class="md:hidden size-10" />
+    <span></span>
+  </button>
+  <nav class="md:flex gap-1.5 md:gap-3 hidden text-gray-200 me-2">
     <a href="#about">Sobre mi <span></span></a>
     <a href="#formation">Formación <span></span></a>
     <a href="#projects">Proyectos <span></span></a>
   </nav>
+  <style>
+    figure {
+      filter: drop-shadow(0 0 25px #532dbc);
+    }
+    nav a {
+      position: relative;
+      transition: all 0.3s;
+    }
+    nav a span {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: "";
+      width: 0%;
+      height: 2px;
+      border-radius: 20%;
+      overflow: hidden;
+      background: #532dbc;
+      filter: blur(1px);
+      transition: all 0.3s;
+    }
+    nav a:hover {
+      text-shadow: 10px -15px 1px #532dbc;
+      & > span {
+        width: 100%;
+      }
+    }
+    header {
+      transition: all 1s;
+      animation: rellenarBarra auto forwards;
+      animation-timeline: scroll(root);
+      animation-range: 0 200px;
+    }
+    @keyframes rellenarBarra {
+      from {
+        background: transparent;
+      }
+      to {
+        backdrop-filter: blur(3px);
+        background: #030303e2;
+      }
+    }
+  </style>
 </header>
-<style>
-  figure{
-    filter: drop-shadow(0 0 25px #532dbc)
-  }
-  nav a{
-    position: relative;
-    transition: all .3s;
-  }
-  nav a span{
-    position: absolute;
-    bottom:  0;
-    left: 0;
-    content: '';
-    width: 0%;
-    height: 2px;
-    border-radius: 20%;
-    overflow: hidden;
-    background: #532dbc;
-    filter: blur(1px);
-    transition: all .3s;
-  }
-  nav a:hover {
-    text-shadow: 10px -15px 1px #532dbc;
-    & > span{
-    width: 100%;
-  }
-  }
-</style>
+
+<script>
+  const $mobileMenu = document.querySelector("#mobile-menu");
+  const a = () => {
+    $mobileMenu.classList.remove("translate-x-[100%]");
+    $mobileMenu.classList.add("translate-x-0");
+  };
+
+  document.querySelector("button.hamburguesa").addEventListener("click", a);
+</script>
